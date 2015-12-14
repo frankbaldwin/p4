@@ -109,46 +109,36 @@ class handicapController extends Controller
     * Responds to requests to GET /books/create
     */
     public function getCreate_round() {
+
      	    return view('create_round');
     }
    public function postCreate_round(Request $request) {
-      		$date = $_POST['date'];
-      		$course_name = $_POST['course_name'];
-      		$course_rating = $_POST['course_rating'];
-      		$slope_rating = $_POST['slope_rating'];
-      		$score = $_POST['score'];
 
-      	/*	$this->validate($request, [
-      		'date' => 'required|date'
-      		]);
-      	*/
-      		$date_data = array($_POST['date']);
-      		$courseName_data = array($_POST['course_name']);
-      		$courseRating_data = array($_POST['course_rating']);
-      		$slopeRating_data = array($_POST['slope_rating']);
-      		$score_data = array($_POST['score']);
+        $this->validate(
+            $request,
+            ['date' => 'required',
+            'course_name' => 'required',
+            'course_rating'=> 'required',
+            'slope_rating' => 'required',
+            'score' => 'required',
+          ]
+        );
 
-      		print "<table>\n";
+        # Enter round into the database
 
-      			foreach($date_data as $key => $value){
-      				print "<tr><td>$value</td></tr>\n";
-      			}
-      			foreach($courseName_data as $key => $value){
-      				print "<tr><td>$value</td></tr>\n";
-      			}
-      			foreach($courseRating_data as $key => $value){
-      				print "<tr><td>$value</td></tr>\n";
-      			}
-      			foreach($slopeRating_data as $key => $value){
-      				print "<tr><td>$value</td></tr>\n";
-      			}
-      			foreach($score_data as $key => $value){
-      				print "<tr><td>$value</td></tr>\n";
-      			}
+        $rounds = new \App\Round();
 
-      		print "</table>";
+      	$rounds->date_played = $request->input('date');
+      	$rounds->course_name = $request->input('course_name');
+      	$rounds->course_rating = $request->input('course_rating');
+      	$rounds->slope_rating = $request->input('slope_rating');
+      	$rounds->round_score = $request->input('score');
+        $rounds->user_id = \Auth::id();
 
-      		return redirect('/handicap');
+        $rounds->save();
+
+        \Session::flash('flash_message', 'Your round was added!');
+      	return redirect ('/handicap');
     }
 
    public function getConfirmDelete() {
