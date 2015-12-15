@@ -14,6 +14,13 @@ class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
                                     CanResetPasswordContract
 {
+
+  public function round() {
+        # User has many Rounds
+        # Define a one-to-many relationship.
+        return $this->hasMany('\App\Round');
+    }
+
     use Authenticatable, Authorizable, CanResetPassword;
 
     /**
@@ -28,7 +35,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['email', 'password'];
 
     /**
      * The attributes excluded from the model's JSON form.

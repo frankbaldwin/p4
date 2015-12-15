@@ -35,8 +35,8 @@
 
 
 	Route::group(['middleware' => 'auth'], function() {
-			Route::get('/create_round', 'HandicapController@getCreate_round');
-			Route::post('/create_round', 'HandicapController@postCreate_round');
+			Route::get('/create', 'HandicapController@getCreate');
+			Route::post('/create', 'HandicapController@postCreate');
 			Route::get('/edit_round/{id?}', 'HandicapController@getEdit_round');
 			Route::post('/edit_round', 'HandicapController@postEdit_round');
 			Route::get('/confirm-delete/{id?}', 'HandicapController@getConfirmDelete');

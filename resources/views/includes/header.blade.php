@@ -10,7 +10,7 @@
 					<ul>
 							@if(Auth::check())
 									<li><a href='/'>HOME</a></li>
-									<li><a href="create_round">ENTER NEW ROUND</a></li>
+									<li><a href="create">ENTER NEW ROUND</a></li>
 									<li><a href="handicap">MY HANDICAP</a></li>
 									<li><a href='/logout'>LOG OUT</a></li>
 							@else

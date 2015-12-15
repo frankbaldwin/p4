@@ -108,11 +108,11 @@ class handicapController extends Controller
    /**
     * Responds to requests to GET /books/create
     */
-    public function getCreate_round() {
+    public function getCreate() {
 
-     	    return view('create_round');
+     	    return view('create');
     }
-   public function postCreate_round(Request $request) {
+   public function postCreate(Request $request) {
 
         $this->validate(
             $request,

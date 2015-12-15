@@ -26,7 +26,7 @@
             <input
                 type='text'
                 id='date_played'
-                name='date_played'
+                name='date'
                 value='{{ old('date_played','11/15/2015') }}'
             >
         </fieldset>
@@ -65,8 +65,8 @@
             <label for='18_hole_score'>* 18 Hole Score:</label>
             <input
                 type='integer'
-                id='18_hole_score'
-                name='18_hole_score'
+                id='score'
+                name='score'
                 value='{{ old('18_hole_score','85') }}'
                 >
         </fieldset>
