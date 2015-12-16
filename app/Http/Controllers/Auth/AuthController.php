@@ -30,7 +30,7 @@ class AuthController extends Controller
         protected $loginPath = '/login';
 
         # Where should the user be redirected to after logging out?
-        protected $redirectAfterLogout = '/welcome/index';
+        protected $redirectAfterLogout = '/';
 
      /* @return void
      */
