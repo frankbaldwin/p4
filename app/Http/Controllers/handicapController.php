@@ -13,7 +13,7 @@ class HandicapController extends Controller
     public function getHandicap(Request $request)
      {
         $rounds = \App\Round::where('user_id', '=', \Auth::id())->orderBy('id','ASC')->get();
-        return view('\handicap')->with('rounds',$rounds);
+        return view('/handicap')->with('rounds',$rounds);
      }
 
 	 public function postHandicap()
@@ -46,7 +46,7 @@ class HandicapController extends Controller
     *   Multiply Average by .96
     *   Delete all numbers after the tenths' digit (truncate). Do not round to the nearest tenth.
     */
-		return view('\handicap');
+		return view('/handicap');
     }
 
    public function getEdit($id = null) {
@@ -55,7 +55,7 @@ class HandicapController extends Controller
 
        if(is_null($round)) {
            \Session::flash('flash_message','Round not found.');
-           return redirect('\handicap');
+           return redirect('/handicap');
        }
 
        return view('edit')
@@ -76,7 +76,7 @@ class HandicapController extends Controller
        $round->save();
 
        \Session::flash('flash_message', 'Your round was updated.');
-       return redirect('\handicap');
+       return redirect('/handicap');
 
    }
 
@@ -85,7 +85,7 @@ class HandicapController extends Controller
     */
     public function getCreate() {
 
-     	    return view('\create');
+     	    return view('/create');
     }
    public function postCreate(Request $request) {
 
@@ -113,12 +113,12 @@ class HandicapController extends Controller
         $rounds->save();
 
         \Session::flash('flash_message', 'Your round was added!');
-      	return redirect ('\handicap');
+      	return redirect ('/handicap');
     }
 
    public function getConfirmDelete($round_id) {
       $round = \App\Round::find($round_id);
-       return view('\delete')->with('round', $round);
+       return view('/delete')->with('round', $round);
 
    }
 
@@ -126,14 +126,14 @@ class HandicapController extends Controller
       $round = \App\Round::find($round_id);
       if(is_null($round)) {
            \Session::flash('flash_message','Round not found.');
-           return redirect('\handicap');
+           return redirect('/handicap');
        }
 
        $round->delete();
 
        \Session::flash('flash_message', $round->id.' was deleted.');
 
-       return redirect('\handicap');
+       return redirect('/handicap');
 
    }
 }
