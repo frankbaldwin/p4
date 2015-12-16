@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class handicapController extends Controller
+class HandicapController extends Controller
 {
 
     public function getHandicap(Request $request)

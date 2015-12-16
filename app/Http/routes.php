@@ -63,7 +63,7 @@
     When you're done debugging, comment it back out so you don't accidentally leave it
     running on your live server, making your credentials public.
     */
-    //print_r(config('database.connections.mysql'));
+    #print_r(config('database.connections.mysql'));
 
     echo '<h1>Test Database Connection</h1>';
     try {
