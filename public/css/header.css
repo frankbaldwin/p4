@@ -1,46 +1,52 @@
 /* HEADER CSS */
 header{ margin-bottom: -4px; padding: 0px }
 .logo{ margin: auto; text-align: center; }
-h1{text-align: center; font-size: 18px; }
+h1{text-align: center; font-size: 18px; font-family: Arial; margin-top: 20px;}
 p{font-size: 18px; }
 .bg{ width: 100%; background-image: url('images/green.JPG') no-repeat center; }
 
-/* FLASH MESSAGE */
-.flash_message {
-    width:100%;
-    height: 20px;
-    text-align:center;
-    padding:5px;
-    position:fixed;
-    top:0;
-    left:0;
-    background-color:yellow;
-    font-weight:bold;
-}
+/* FLASH MESSAGE CSS*/
+.flash_message { width:100%; height: 20px; text-align:center; padding:5px; position:fixed; top:0; left:0; background-color:yellow; font-weight:bold; }
+/* END FLASH MESSAGE CSS*/
 
-/* LOGIN */
-	.login{ display: block; width: 450px; margin: auto; }
-	.input2{ text-align: center; }
-	.input3{ text-align: center; color: grey;}
-	.p3{ text-align: center; margin-right:0px; }
+/* LOGIN BLADE CSS*/
+#login_form{ width: 85%; margin: auto; text-align: center; }
+.p4{ text-align: right; font-family: Arial; margin-bottom: 10px;}
+.p3{ text-align: center; margin-right:0px; font-family: Arial;}
+#login_button{ text-decoration: none; background: green; font-family: Arial; color: white; padding: 5px; border-radius: 5px; }
+/* END LOGIN CSS*/
 
-
-/* BEGIN NAVIGATION */
-.nav_bar{ display: block; text-decoration: none; width: 100%; margin: -4px auto 0px auto; background: green; height: 21px; padding: 9px 0px 9px 0px; }
+/* NAVIGATION CSS*/
+.nav_bar{ display: block; text-decoration: none; width: 100%; margin: -4px auto 0px auto; background: green; height: 21px; padding: 9px 0px 7px 0px; }
 .main_nav{ display:inline; text-decoration: none; margin: auto; width: 100%; }
 .nav_bar li{ display: inline; text-decoration: none; text-align: center; background: green; width: 300px; height: 21px; font-family: Arial; font-weight: bold; }
 .nav_bar li a{ width: 300px; text-decoration: none; text-align: center; color: white; padding: 10px 20px 10px 20px; }
-.nav_bar li a:hover{ width: 300px; text-decoration: none; background: #005e20; text-align: center; color: white; padding: 10px 20px 10px 20px; }
+.nav_bar li a:hover{ width: 300px; text-decoration: none; background: #005e20; text-align: center; color: white; padding: 9px 20px 10px 20px; }
 .nav_bar ul{ margin-top: -0px; }
-/* END NAVIGATION */
+/* END NAVIGATION CSS*/
 
-/* BEGIN HOME BLADE CSS */
-.bg{ text-align: center; }
-.p1{ text-align: right; margin-right: 175px; font-size: 18px; }
+/* BEGIN WELCOME BLADE CSS */
+.bg{ text-align: center; width: 75%; margin: 20px auto 0px auto; font-family: Arial;}
+.p1{ text-align: right; margin-right: 175px; font-size: 18px; color: grey;}
 .home{ width: 500px; margin: auto; }
-/* END HOME BLADE CSS */
+.welcome_button{ text-decoration: none; background: green; font-family: Arial; color: white; padding: 5px; border-radius: 5px;}
+/* END WELCOME BLADE CSS */
 
-/* BEGIN ROUND INPUT BLADE CSS */
+/* CREATE BLADE CSS*/
+#create_form{ width: 85%; margin: auto; text-align: center; height: 225px; }
+.p4{ text-align: right; font-family: Arial; margin-bottom: 10px;}
+.p3{ text-align: center; margin-right:0px; font-family: Arial;}
+#create_button{ text-decoration: none; background: green; font-family: Arial; color: white; padding: 5px; border-radius: 5px;}
+/* END LOGIN CSS*/
+
+/* BEGIN REGISTER BLADE CSS */
+#register_form{ width: 85%; margin: auto; text-align: center; }
+.p4{ text-align: right; font-family: Arial; margin-right: 450px; margin-bottom: 10px;}
+#register_button{ text-decoration: none; background: green; font-family: Arial; color: white; padding: 5px; border-radius: 5px; }
+}
+/* END REGISTER BLADE CSS */
+
+/* BEGIN CREATE BLADE CSS */
 .p2{ text-align: right; margin-right: 90px; }
 .round{ display: block; width: 450px; margin: auto; }
 .input2{ text-align: center; }
@@ -48,6 +54,7 @@ p{font-size: 18px; }
 #enter{ text-align: center; margin-left: 200px; }
 #month, #day{ margin-right: 5px;}
 }
+/* END CREATE BLADE CSS */
 
 /* END ROUND INPUT BLADE CSS */
 
@@ -63,21 +70,23 @@ p{font-size: 18px; }
 	text-align: left;
 	font-family: Arial;
 	font-size: 36px;
-	margin-left: 240px;
+	margin-left: 190px;
 	margin-bottom: -1px;
 	}
 
 #current_handicap{
   text-align: center;
   font-size: 24px;
+  font-family: Arial;
 }
 #handicap{
 	font-size: 36px;
 	font-weight: bold;
 	text-align: center;
 	margin-bottom: -5px;
+  font-family: Arial;
 	}
-.round_table{ margin: auto; text-align: left; font-family: Arial; }
+.round_table{ margin: 0px auto 25px auto; text-align: left; font-family: Arial; }
 .round_table, .round_table tr, .round_table th, .round_table td{
 	border-collapse: collapse;
 	border: 1px solid black;
@@ -121,6 +130,5 @@ p{font-size: 18px; }
 
 /* BEGIN FOOTER */
 footer{
-	margin-top: 100px;
-	text-align: center;
+	width:100%; height: 20px; text-align:center; padding-top:5px; position:fixed; bottom: 0px; clear: both; background: white; font-family: Arial;
 	}

@@ -8,7 +8,7 @@
 
   	<h1 id="handicap_title">Welcome back {{$user->name}}!</h1>
   	   <p id="current_handicap">Your current handicap is </p>
-       <div id="handicap">9.9</div>
+       <div id="handicap" name="handicap">{{$user->name}}</div>
 
        <h3 id="table_title">Round Data</h3>
      	<table class="round_table">

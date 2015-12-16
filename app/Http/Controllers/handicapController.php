@@ -10,11 +10,11 @@ use App\Http\Controllers\Controller;
 class HandicapController extends Controller
 {
 
-    public function getHandicap(Request $request)
-     {
-        $rounds = \App\Round::where('user_id', '=', \Auth::id())->orderBy('id','ASC')->get();
-        return view('/handicap')->with('rounds',$rounds);
-     }
+  public function getHandicap(Request $request)
+   {
+      $rounds = \App\Round::where('user_id', '=', \Auth::id())->orderBy('id','ASC')->get();
+      return view('handicap')->with('rounds',$rounds);
+   }
 
 	 public function postHandicap()
     {

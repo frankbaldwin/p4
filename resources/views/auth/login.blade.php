@@ -4,7 +4,7 @@
 
 
 
-    <h1>Login</h1>
+    <h1 class="login">Login</h1>
 
     @if(count($errors) > 0)
         <ul class='errors'>
@@ -13,24 +13,28 @@
             @endforeach
         </ul>
     @endif
+    <div id="login_form">
+        <form  method='POST' action='/login'>
 
-    <form class="round" method='POST' action='/login'>
+            {!! csrf_field() !!}
 
-        {!! csrf_field() !!}
+            <div class='p4'>
+                <label for='name'>Email</label>
+                <input type='text' name='email' id='email' value='jamal@harvard.edu'>
+            </div>
 
-        <div class='form-group'>
-            <p class="p2">EMAIL:<input type='text' name='email' id='email' value='{{ old('email') }}'></p>
-            <p class="p2">PASSWORD:<input type='password' name='password' id='password' value='{{ old('password') }}'></p>
-        </div>
+            <div class='p4'>
+                <label for='name'>Password</label>
+                <input type='password' name='password' id='password' value='helloworld'>
+            </div>
 
-        <div class='form-group'>
-          <p class="p3">REMEMBER ME: <input type='checkbox' name='remember' id='remember'></p>
-        <!--  <label for='remember' class='checkboxLabel'>Remember me</label> -->
-        </div>
+            <div class='form-group'>
+              <p class="p3">Remember Me: <input type='checkbox' name='remember' id='remember'></p>
+            </div>
 
-        <p class="p2"><button type='submit' class='btn btn-primary'>Login</button></p>
+            <button id='login_button' type='submit' class='btn btn-primary'>Login</button>
 
-    </form>
-
+        </form>
+    </div>
     <p class="p3">Don't have an account? <a href='/register'>Register here...</a></p>
 @stop

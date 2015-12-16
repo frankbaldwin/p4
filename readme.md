@@ -23,4 +23,3 @@ the CRUD (Create Read Update Delete) method and user authentication.
 #####[P4 Web View](http://p4.frankpbaldwin.com)
 #####[P4 Github] (https://github.com/frankbaldwin/P4)
 #####[P4 Walk Through] (https://github.com/frankbaldwin/P4/blob/master/Project4_walkthrough.swf)
-
