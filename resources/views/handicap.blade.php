@@ -1,9 +1,7 @@
-<!-- Random User Page -->
-
 @extends('layouts.master')
 
 @section('title')
-    Random Business Contact Generator
+    Handicap
 @stop
 
 @section('content')
@@ -21,6 +19,8 @@
      			<th id="rating_head" class="round_head" name="rating_head">Course Rating</th>
      			<th id="slope_head" class="round_head" name="slope_head">Slope Rating</th>
      			<th id="score_head" class="round_head" name="score_head">18 Hole Score</th>
+          <th id="edit_head" class="round_head" name="edit"></th>
+          <th id="delete_head" class="round_head" name="delete"></th>
      		</tr>
 
      @if(sizeof($rounds)==0)
@@ -35,6 +35,8 @@
         			<td id="course_rating" class="round_data" name="course_rating">{{$round->course_rating}}</td>
         			<td id="slope_rating" class="round_data" name="slope_rating">{{$round->slope_rating}}</td>
         			<td id="score" class="round_data" name="score">{{$round->round_score}}</td>
+              <td id="edit" class="round_data" name="edit"><a href='edit/{{$round->id}}'>Edit</a></td>
+              <td id="delete" class="round_data" name="delete"><a href='confirm-delete/{{$round->id}}'>Delete</a></td>
         		</tr>
             @endforeach
         @endif

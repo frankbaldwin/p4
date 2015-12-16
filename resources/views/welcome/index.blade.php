@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Welcome to Foobooks
+    Welcome to MyGolf Handicap
 @stop
 
 @section('content')

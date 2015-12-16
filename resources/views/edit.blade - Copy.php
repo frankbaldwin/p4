@@ -1,13 +1,13 @@
 @extends('layouts.master')
 
 @section('title')
-    Enter a New Round
+    Edit Round
 @stop
 
 
 @section('content')
 
-    <h1>Add a new round</h1>
+    <h1>Edit Round</h1>
 
     @if(count($errors) > 0)
     <ul>
@@ -17,17 +17,18 @@
     </ul>
     @endif
 
-    <form method='POST' action='/create'>
+    <form method='POST' action='/edit'>
 
         <input type='hidden' value='{{ csrf_token() }}' name='_token'>
+        <input type='hidden' name='id' value='{{$round->id}}'>
 
         <fieldset>
             <label>* Date Played (YYYY-MM-DD):</label>
             <input
-                type='integer'
+                type='text'
                 id='date_played'
                 name='date'
-                value='{{ old('date_played','2015-11-15') }}'
+                value='{{$round->date_played}}'
             >
         </fieldset>
 
@@ -37,7 +38,7 @@
                 type='text'
                 id='course_name'
                 name="course_name"
-                value='{{ old('course_name','Summit Windmill') }}'
+                value='{{$round->course_name}}'
             >
         </fieldset>
 
@@ -47,7 +48,7 @@
                 type='integer'
                 id='course_rating'
                 name="course_rating"
-                value='{{ old('course_rating','70.2') }}'
+                value='{{$round->course_rating}}'
                 >
         </fieldset>
 
@@ -57,7 +58,7 @@
                 type='integer'
                 id='slope_rating'
                 name="slope_rating"
-                value='{{ old('slope_rating','146') }}'
+                value='{{$round->slope_rating}}'
                 >
         </fieldset>
 
@@ -67,12 +68,12 @@
                 type='integer'
                 id='score'
                 name='score'
-                value='{{ old('round_score','85') }}'
+                value='{{$round->round_score}}'
                 >
         </fieldset>
 
         <br>
-        <button type="submit" class="btn btn-primary">Enter Round</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
     </form>
 
 @stop

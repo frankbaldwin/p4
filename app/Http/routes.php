@@ -10,17 +10,17 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-// Authentication routes...
+	# Authentication routes...
 	Route::get('/login', 'Auth\AuthController@getLogin');
 	Route::post('/login', 'Auth\AuthController@postLogin');
 	Route::get('/logout', 'Auth\AuthController@getLogout');
 
-	// Registration routes...
+	# Registration routes...
 	Route::get('/register', 'Auth\AuthController@getRegister');
 	Route::post('/register', 'Auth\AuthController@postRegister');
 
 	Route::get('/confirm-login-worked', function() {
-	    # You may access the authenticated user via the Auth facade
+	    # Access the authenticated user via the Auth facade
 	    $user = Auth::user();
 		    if($user) {
 		        echo 'You are logged in.';
@@ -37,10 +37,10 @@
 	Route::group(['middleware' => 'auth'], function() {
 			Route::get('/create', 'HandicapController@getCreate');
 			Route::post('/create', 'HandicapController@postCreate');
-			Route::get('/edit_round/{id?}', 'HandicapController@getEdit_round');
-			Route::post('/edit_round', 'HandicapController@postEdit_round');
+			Route::get('/edit/{id?}', 'HandicapController@getEdit');
+			Route::post('/edit', 'HandicapController@postEdit');
 			Route::get('/confirm-delete/{id?}', 'HandicapController@getConfirmDelete');
-			Route::post('/delete/{id?}', 'HandicapController@getDoDelete');
+			Route::get('/delete/{id?}', 'HandicapController@getDoDelete');
       Route::get('/handicap', 'HandicapController@getHandicap');
       Route::post('/handicap', 'HandicapController@postHandicap');
 	});

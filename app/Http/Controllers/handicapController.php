@@ -49,60 +49,35 @@ class handicapController extends Controller
 		return view('handicap');
     }
 
-   public function getEdit_round($id = null) {
-  /*     # Get this book and eager load its tags
-       $book = \App\Book::with('tags')->find($id);
-       if(is_null($book)) {
-           \Session::flash('flash_message','Book not found.');
-           return redirect('\books');
+   public function getEdit($id = null) {
+     # Get this round
+       $round = \App\Round::find($id);
+
+       if(is_null($round)) {
+           \Session::flash('flash_message','Round not found.');
+           return redirect('\handicap');
        }
 
-       # Get all the possible authors so we can build the authors dropdown in the view
-       $authorModel = new \App\Author();
-       $authors_for_dropdown = $authorModel->getAuthorsForDropdown();
-       # Get all the possible tags so we can include them with checkboxes in the view
-       $tagModel = new \App\Tag();
-       $tags_for_checkbox = $tagModel->getTagsForCheckboxes();
-  */
-       /*
-       Create a simple array of just the tag names for tags associated with this book;
-       will be used in the view to decide which tags should be checked off
-       */
-  /*
-       $tags_for_this_book = [];
-       foreach($book->tags as $tag) {
-           $tags_for_this_book[] = $tag->name;
-       }
-       return view('books.edit')
-           ->with([
-               'book' => $book,
-               'authors_for_dropdown' => $authors_for_dropdown,
-               'tags_for_checkbox' => $tags_for_checkbox,
-               'tags_for_this_book' => $tags_for_this_book,
-           ]);
-  */
+       return view('edit')
+          ->with([
+              'round' => $round,
+         ]);
    }
    /**
    * Responds to requests to POST /books/edit
    */
-   public function postEdit_round(Request $request) {
-  /*     $book = \App\Book::find($request->id);
-       $book->title = $request->title;
-       $book->author_id = $request->author;
-       $book->cover = $request->cover;
-       $book->published = $request->published;
-       $book->purchase_link = $request->purchase_link;
-       $book->save();
-       if($request->tags) {
-           $tags = $request->tags;
-       }
-       else {
-           $tags = [];
-       }
-       $book->tags()->sync($tags);
-       \Session::flash('flash_message','Your book was updated.');
-       return redirect('/books/edit/'.$request->id);
-    */
+   public function postEdit(Request $request) {
+      $round = \App\Round::find($request->id);
+       $round->date_played = $request->date;
+       $round->course_name = $request->course_name;
+       $round->course_rating = $request->course_rating;
+       $round->slope_rating = $request->slope_rating;
+       $round->round_score = $request->score;
+       $round->save();
+
+       \Session::flash('flash_message', 'Your round was updated.');
+       return redirect('/handicap/');
+
    }
 
    /**
@@ -141,24 +116,24 @@ class handicapController extends Controller
       	return redirect ('/handicap');
     }
 
-   public function getConfirmDelete() {
-  /*     $book = \App\Book::find($book_id);
-       return view('books.delete')->with('book', $book);
-  */
+   public function getConfirmDelete($round_id) {
+      $round = \App\Round::find($round_id);
+       return view('delete')->with('round', $round);
+
    }
 
-   public function getDoDelete() {
-  /*     $book = \App\Book::find($book_id);
-       if(is_null($book)) {
-           \Session::flash('flash_message','Book not found.');
-           return redirect('\books');
+   public function getDoDelete($round_id) {
+      $round = \App\Round::find($round_id);
+      if(is_null($round)) {
+           \Session::flash('flash_message','Round not found.');
+           return redirect('/handicap');
        }
-       if($book->tags()) {
-           $book->tags()->detach();
-       }
-       $book->delete();
-       \Session::flash('flash_message',$book->title.' was deleted.');
-       return redirect('/books');
-  */
+
+       $round->delete();
+
+       \Session::flash('flash_message', $round->id.' was deleted.');
+
+       return redirect('/handicap');
+
    }
 }
