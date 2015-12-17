@@ -12,7 +12,7 @@ the CRUD (Create Read Update Delete) method and user authentication.
 3. Created Rounds table, migrated & seeded
 4. Implemented Users Authentication with table, migration & seed
 5. Used a one to many relationship between the tables and modified models accordingly with proper relationships & FK.
-6. Followed the CRUD (Create Read Update Delete) method.
+6. Followed the CRUD (Create Read Update Delete) method.  
   CREATE - After users register & login, they can enter their round information and save.  
   READ - Once a user enters a round and is logged in, the users information will be read from the database and outputed.  
   UPDATE - Users will be able to update rounds they have saved.  
@@ -22,4 +22,4 @@ the CRUD (Create Read Update Delete) method and user authentication.
 ### Links:
 #####[P4 Web View](http://p4.frankpbaldwin.com)
 #####[P4 Github] (https://github.com/frankbaldwin/P4)
-#####[P4 Walk Through] (https://github.com/frankbaldwin/P4/blob/master/Project4_walkthrough.swf)
+#####[P4 Walk Through] (https://github.com/frankbaldwin/P4/blob/master/P4_walkthrough.swf)
