@@ -10,7 +10,7 @@
   	   <p id="current_handicap">Your current handicap is </p>
        <div id="handicap" name="handicap">{{$user->name}}</div>
 
-       <h3 id="table_title">Round Data</h3>
+    <h3 id="table_title">Round Data</h3>
      	<table class="round_table">
      		<tr>
      			<th id="round_head" class="round_head" name="round_head">Round#</th>
@@ -38,6 +38,7 @@
               <td id="edit" class="round_data" name="edit"><a href='edit/{{$round->id}}'>Edit</a></td>
               <td id="delete" class="round_data" name="delete"><a href='confirm-delete/{{$round->id}}'>Delete</a></td>
         		</tr>
+
             @endforeach
         @endif
 @stop

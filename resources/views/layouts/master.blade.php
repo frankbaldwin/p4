@@ -5,7 +5,12 @@
         {{-- Yield the title if it exists, otherwise default to 'MyGolf Handicap Calculator' --}}
         @yield('title','MyGolf Handicap Calculator')
     </title>
-    @include('includes.head')
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <link href="/css/header.css" rel="stylesheet">
+
+    {{-- Yield any page specific CSS files or anything else you might want in the <head> --}}
+    @yield('head')
 </head>
 <body>
 
@@ -15,10 +20,28 @@
           </div>
       @endif
 
-	<div class="container">
+
 
   	  <header class="row">
-  			  @include('includes.header')
+        <div>
+          <img class ="logo" src="/images/logo.png" alt="logo" width="100%">
+        </div>
+        <nav class='nav_bar'>
+      			<div class="main_nav">
+      					<ul>
+      							@if(Auth::check())
+      									<li><a href='/'>HOME</a></li>
+      									<li><a href="create">ENTER NEW ROUND</a></li>
+      									<li><a href="handicap">MY HANDICAP</a></li>
+      									<li><a href='/logout'>LOG OUT</a></li>
+      							@else
+      									<li><a href='/'>HOME</a></li>
+      									<li><a href='/login'>LOGIN</a></li>
+      									<li><a href='/register'>REGISTER</a></li>
+      							@endif
+      					</ul>
+      			</div>
+      	</nav>
   	  </header>
 
 
@@ -28,7 +51,7 @@
 
     	</div>
 
-  </div>
+
 		<footer class="row">
 
 			@include('includes.footer')

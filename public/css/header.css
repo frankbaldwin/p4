@@ -26,9 +26,8 @@ p{font-size: 18px; }
 /* END NAVIGATION CSS*/
 
 /* BEGIN WELCOME BLADE CSS */
-.bg{ text-align: center; width: 75%; margin: 20px auto 0px auto; font-family: Arial;}
+.bg{ text-align: center; width: 75%; height: 300px; margin: 20px auto 0px auto; font-family: Arial;}
 .p1{ text-align: right; margin-right: 175px; font-size: 18px; color: grey;}
-.home{ width: 500px; margin: auto; }
 .welcome_button{ text-decoration: none; background: green; font-family: Arial; color: white; padding: 5px; border-radius: 5px;}
 /* END WELCOME BLADE CSS */
 
@@ -39,11 +38,21 @@ p{font-size: 18px; }
 #create_button{ text-decoration: none; background: green; font-family: Arial; color: white; padding: 5px; border-radius: 5px;}
 /* END LOGIN CSS*/
 
+/* EDIT BLADE CSS*/
+#edit_form{ width: 85%; margin: auto; text-align: center; height: 225px; }
+#edit_button{ text-decoration: none; background: green; font-family: Arial; color: white; padding: 5px; border-radius: 5px;}
+/* END EDIT CSS*/
+
+/* DELETE BLADE CSS*/
+#delete_form{ width: 85%; margin: auto; text-align: center; height: 225px; }
+#delete_button{ text-decoration: none; background: green; font-family: Arial; color: white; padding: 5px; border-radius: 5px;}
+/* END DELETE BLADE CSS*/
+
+
 /* BEGIN REGISTER BLADE CSS */
 #register_form{ width: 85%; margin: auto; text-align: center; }
-.p4{ text-align: right; font-family: Arial; margin-right: 450px; margin-bottom: 10px;}
+.p4{ text-align: right; font-family: Arial; margin-right: 400px; margin-bottom: 10px;}
 #register_button{ text-decoration: none; background: green; font-family: Arial; color: white; padding: 5px; border-radius: 5px; }
-}
 /* END REGISTER BLADE CSS */
 
 /* BEGIN CREATE BLADE CSS */
@@ -53,52 +62,19 @@ p{font-size: 18px; }
 .input3{ text-align: center; color: grey;}
 #enter{ text-align: center; margin-left: 200px; }
 #month, #day{ margin-right: 5px;}
-}
 /* END CREATE BLADE CSS */
 
-/* END ROUND INPUT BLADE CSS */
-
-
 /* BEGIN HANDICAP BLADE CSS */
-#handicap_title{
-	font-size: 36px;
-	color: red;
-	font-family: Arial;
-	margin-bottom: -1px;
-	}
-#table_title{
-	text-align: left;
-	font-family: Arial;
-	font-size: 36px;
-	margin-left: 190px;
-	margin-bottom: -1px;
-	}
+#handicap_title{ font-size: 36px; color: red; font-family: Arial;margin-bottom: -1px; }
+#table_title{	text-align: left;	font-family: Arial;	font-size: 36px;	margin-left: 190px;	margin-bottom: -1px; }
 
-#current_handicap{
-  text-align: center;
-  font-size: 24px;
-  font-family: Arial;
-}
-#handicap{
-	font-size: 36px;
-	font-weight: bold;
-	text-align: center;
-	margin-bottom: -5px;
-  font-family: Arial;
-	}
+#current_handicap{ text-align: center; font-size: 24px; font-family: Arial; }
+#handicap{ font-size: 36px; font-weight: bold; text-align: center; margin-bottom: -5px; font-family: Arial;	}
 .round_table{ margin: 0px auto 25px auto; text-align: left; font-family: Arial; }
-.round_table, .round_table tr, .round_table th, .round_table td{
-	border-collapse: collapse;
-	border: 1px solid black;
-}
+.round_table, .round_table tr, .round_table th, .round_table td{ border-collapse: collapse; border: 1px solid black;}
 
-.round_head{
-	background: yellow;
-	padding: 5px 10px 5px 10px;
-	}
-.round_data{
-	padding: 3px 10px 3px 10px; font-size: 12px;
-}
+.round_head{ background: yellow; padding: 5px 10px 5px 10px; }
+.round_data{ padding: 3px 10px 3px 10px; font-size: 12px; }
 
 #round_head{width: 100px; text-align: center;}
 #date_head{ width: 125px; text-align: center; }

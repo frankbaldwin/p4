@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Collection;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -13,11 +13,23 @@ class HandicapController extends Controller
   public function getHandicap(Request $request)
    {
       $rounds = \App\Round::where('user_id', '=', \Auth::id())->orderBy('id','ASC')->get();
+      $handicap = function(){
+          $scores = $rounds->score->get();
+          $course_ratings = $rounds->course_rating->get();
+          $slope_ratings = $rounds->slope_rating->get();
+
+          $difference = $scores - $course_ratings;
+          $result = $difference * 113;
+          $handicap_differential = $result / $slope_ratings;
+          $handicap = $handicap_differential;
+          return $handicap;
+      };
       return view('handicap')->with('rounds',$rounds);
    }
 
 	 public function postHandicap()
     {
+
 	/*Logic steps:
     * Get current user round data to calculate handicap:
     *     course_rating
