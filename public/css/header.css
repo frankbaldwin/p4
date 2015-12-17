@@ -1,9 +1,11 @@
+/** CSS for MyGolf Handicap Calculator **/
+
 /* HEADER CSS */
 header{ margin-bottom: -4px; padding: 0px }
 .logo{ margin: auto; text-align: center; }
 h1{text-align: center; font-size: 18px; font-family: Arial; margin-top: 20px;}
 p{font-size: 18px; }
-.bg{ width: 100%; background-image: url('images/green.JPG') no-repeat center; }
+.bg{ width: 100%; background-image: url('images/green.JPG'); }
 
 /* FLASH MESSAGE CSS*/
 .flash_message { width:100%; height: 20px; text-align:center; padding:5px; position:fixed; top:0; left:0; background-color:yellow; font-weight:bold; }
@@ -51,7 +53,7 @@ p{font-size: 18px; }
 
 /* BEGIN REGISTER BLADE CSS */
 #register_form{ width: 85%; margin: auto; text-align: center; }
-.p4{ text-align: right; font-family: Arial; margin-right: 400px; margin-bottom: 10px;}
+.p4{ text-align: right; font-family: Arial; margin-right: 450px; margin-bottom: 10px;}
 #register_button{ text-decoration: none; background: green; font-family: Arial; color: white; padding: 5px; border-radius: 5px; }
 /* END REGISTER BLADE CSS */
 

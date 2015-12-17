@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <link href="/css/header.css" rel="stylesheet">
-
+    <script type="text/javascript" src="js/logic.js"></script>
     {{-- Yield any page specific CSS files or anything else you might want in the <head> --}}
     @yield('head')
 </head>

@@ -10,15 +10,12 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
-class User extends Model implements AuthenticatableContract,
-                                    AuthorizableContract,
-                                    CanResetPasswordContract
-{
+class User extends Model implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract{
 
-  public function round() {
-        # User has many Rounds
-        # Define a one-to-many relationship.
-        return $this->hasMany('\App\Round');
+    public function round() {
+          # User has many Rounds
+          # Define a one-to-many relationship.
+          return $this->hasMany('\App\Round');
     }
 
     use Authenticatable, Authorizable, CanResetPassword;
